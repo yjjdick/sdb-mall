@@ -151,74 +151,74 @@ https://senduobang.oss-cn-shanghai.aliyuncs.com/admin-%E8%AE%A2%E5%8D%95%E8%AF%A
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5.PNG "首页")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5.PNG?x-oss-process=image/resize,p_30 "首页")
 <br> 
 <br> 
 - 商品详情
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85.PNG "商品详情")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85.PNG?x-oss-process=image/resize,p_30 "商品详情")
 <br> 
 <br> 
 - 客服
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%AE%A2%E6%9C%8D.PNG "客服")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%AE%A2%E6%9C%8D.PNG?x-oss-process=image/resize,p_30 "客服")
 <br> 
 <br> 
 - 购物车
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%B4%AD%E7%89%A9%E8%BD%A6.PNG "购物车")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%B4%AD%E7%89%A9%E8%BD%A6.PNG?x-oss-process=image/resize,p_30 "购物车")
 <br> 
 <br> 
 - checkout
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-checkout.PNG "checkout")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-checkout.PNG?x-oss-process=image/resize,p_30 "checkout")
 <br> 
 <br> 
 - 微信支付
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98.PNG "微信支付")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98.PNG?x-oss-process=image/resize,p_30 "微信支付")
 <br> 
 <br> 
 - 订单详情
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85.PNG "订单详情")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85.PNG?x-oss-process=image/resize,p_30 "订单详情")
 <br> 
 <br> 
 - 我的中心
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%88%91%E7%9A%84%E4%B8%AD%E5%BF%83.PNG "我的中心")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%88%91%E7%9A%84%E4%B8%AD%E5%BF%83.PNG?x-oss-process=image/resize,p_30 "我的中心")
 <br> 
 <br> 
 - 订单列表
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E5%88%97%E8%A1%A8.PNG "订单列表")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E5%88%97%E8%A1%A8.PNG?x-oss-process=image/resize,p_30 "订单列表")
 <br> 
 <br> 
 - 订单详情2
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%852.PNG "订单详情2")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%852.PNG?x-oss-process=image/resize,p_30 "订单详情2")
 <br> 
 <br> 
 - 物流详情
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%89%A9%E6%B5%81%E8%AF%A6%E6%83%85.PNG "物流详情")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%89%A9%E6%B5%81%E8%AF%A6%E6%83%85.PNG?x-oss-process=image/resize,p_30 "物流详情")
