@@ -1,5 +1,5 @@
 **项目说明** 
-- sdb是一个轻量级的在renren-fast基础上利用jfinal架构二次开发的一个极速二次开发商城框架，前后端分离的Java快速开发平台，能快速开发项目并交付【接私活利器】
+- sdb是一个轻量级的在renren-fast基础上利用jfinal架构二次开发的一个极速二次开发商城框架，前后端分离的Java快速开发平台，C端采用微信小程序，能快速开发项目并交付【接私活利器】
 - 支持MySQL、Oracle、SQL Server、PostgreSQL等主流数据库
 <br> 
 <br>
@@ -91,20 +91,125 @@ sdb
  
  <br>
 
- **项目演示**
-- 演示地址：http://qa.senduobang.com/backend/
-- 账号密码：admin/admin
+ **商城业务**
+- 系统管理（一切后端需要的功能基本都能满足，鉴权机制，定时任务，系统日志，代码生成器等）
+- 商品管理
+- 订单管理
+- 商品分类
+- 规格管理
+- 微信支付
+- 客服系统
+- 物流系统（快递100）
+- 邮件接口
+- 分销模块（接入中）
+- 各种campaign（正在开发）
+
+<br> 
+
+ **介绍和使用视频**
+- 介绍视频地址：正在制作中...
+- 使用视频地址：正在制作中...
 <br> 
 
 **后端管理系统：**
+<br> 
+- 首页dash
+<br> 
 ![输入图片说明](
 https://senduobang.oss-cn-shanghai.aliyuncs.com/admin-%E9%A6%96%E9%A1%B5.png "首页dash")
+<br> 
+<br> 
+- 商品管理列表
+<br> 
 ![输入图片说明](https://senduobang.oss-cn-shanghai.aliyuncs.com/admin-%E5%95%86%E5%93%81%E7%AE%A1%E7%90%86.png "商品管理列表")
+<br> 
+<br> 
+- 多规格添加商品
+<br> 
 ![输入图片说明](
 https://senduobang.oss-cn-shanghai.aliyuncs.com/admin-%E5%A4%9A%E8%A7%84%E6%A0%BC%E5%95%86%E5%93%81%E6%B7%BB%E5%8A%A0.png "多规格添加商品")
+<br> 
+<br> 
+- 订单管理列表
+<br> 
 ![输入图片说明](
 https://senduobang.oss-cn-shanghai.aliyuncs.com/admin-%E8%AE%A2%E5%8D%95%E7%AE%A1%1C%E7%90%86.png "订单管理列表")
+<br> 
+<br> 
+- 订单详情
+<br> 
 ![输入图片说明](
 https://senduobang.oss-cn-shanghai.aliyuncs.com/admin-%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85.png "订单详情")
-
 <br>
+<br>
+**小程序商城：**
+<br> 
+<br> 
+- 首页
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5.PNG "首页")
+<br> 
+<br> 
+- 商品详情
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85.PNG "商品详情")
+<br> 
+<br> 
+- 客服
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%AE%A2%E6%9C%8D.PNG "客服")
+<br> 
+<br> 
+- 购物车
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%B4%AD%E7%89%A9%E8%BD%A6.PNG "购物车")
+<br> 
+<br> 
+- checkout
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-checkout.PNG "checkout")
+<br> 
+<br> 
+- 微信支付
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98.PNG "微信支付")
+<br> 
+<br> 
+- 订单详情
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85.PNG "订单详情")
+<br> 
+<br> 
+- 我的中心
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%88%91%E7%9A%84%E4%B8%AD%E5%BF%83.PNG "我的中心")
+<br> 
+<br> 
+- 订单列表
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E5%88%97%E8%A1%A8.PNG "订单列表")
+<br> 
+<br> 
+- 订单详情2
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%852.PNG "订单详情2")
+<br> 
+<br> 
+- 物流详情
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%89%A9%E6%B5%81%E8%AF%A6%E6%83%85.PNG "物流详情")
+
+
+
+
