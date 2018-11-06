@@ -1,0 +1,41 @@
+stages:
+    - build
+    - push
+    - deploy
+job1:
+    stage: build
+    only:
+        - dev
+    tags:
+        - dev-shell
+    script:
+        - echo "build==============="
+        - mvn -Dmaven.test.skip=true clean package
+
+job2:
+    stage: push
+    only:
+        - dev
+    tags:
+        - dev-shell
+    script:
+        - echo "push==============="
+        - mvn docker:push
+job3:
+    stage: deploy
+    only:
+        - dev
+    tags:
+        - dev-shell
+    script:
+        - echo "deploy================"
+        - cd /docker-swarm
+        - docker stack deploy -c sdb.yml sdb
+
+#job3:
+#    stage: deploy
+#    tags:
+#        - demo
+#    script:
+#        - echo "I am job3"
+#        - echo "I am in deploy stage"

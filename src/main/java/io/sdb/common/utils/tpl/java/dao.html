@@ -1,0 +1,12 @@
+package #(package).dao;
+
+import #(package).dao.BaseDao;
+import #(package).model.#(className);
+import org.springframework.stereotype.Component;
+
+@Component
+public class #(className)Dao extends BaseDao<#(className)> {
+    public #(className)Dao() {
+        super(#(className).class);
+    }
+}
