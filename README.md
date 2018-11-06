@@ -55,7 +55,8 @@ sdb
 
 **如何交流、反馈、参与贡献？** 
 - 开发文档：正在设计中
-- Git仓库：https://github.com/yjjdick/sdb-mall  
+- Github仓库：https://github.com/yjjdick/sdb-mall  
+- Gitee仓库：https://gitee.com/yjjdick/sdb-mall
 - 官方QQ交流群：346743162
 - 技术讨论、二次开发等咨询、问题和建议，请移步到交流群！
 - 如需关注项目最新动态，请Watch、Star项目，同时也是对项目最好的支持
