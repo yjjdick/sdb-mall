@@ -144,7 +144,7 @@ https://senduobang.oss-cn-shanghai.aliyuncs.com/admin-%E8%AE%A2%E5%8D%95%E8%AF%A
 <br>
 <br>
 
-**小程序商城：**
+**小程序商城:**
 <br> 
 <br> 
 - 首页
