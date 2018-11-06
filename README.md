@@ -88,7 +88,6 @@ sdb
  - 本项目是前后端分离的，还需要部署前端，才能运行起来
  - 前端下载地址：请到交流群询问
  - 前端页面可用项目自带的代码生成器自动生成减少90%以上开发工作量
- 
  <br>
 
  **商城业务**
@@ -103,7 +102,6 @@ sdb
 - 邮件接口
 - 分销模块（接入中）
 - 各种campaign（正在开发）
-
 <br> 
 
  **介绍和使用视频**
@@ -140,3 +138,72 @@ https://senduobang.oss-cn-shanghai.aliyuncs.com/admin-%E8%AE%A2%E5%8D%95%E7%AE%A
 <br> 
 ![输入图片说明](
 https://senduobang.oss-cn-shanghai.aliyuncs.com/admin-%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85.png "订单详情")
+<br>
+<br>
+**小程序商城：**
+<br> 
+<br> 
+- 首页
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5.PNG "首页")
+<br> 
+<br> 
+- 商品详情
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85.PNG "商品详情")
+<br> 
+<br> 
+- 客服
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%AE%A2%E6%9C%8D.PNG "客服")
+<br> 
+<br> 
+- 购物车
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%B4%AD%E7%89%A9%E8%BD%A6.PNG "购物车")
+<br> 
+<br> 
+- checkout
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-checkout.PNG "checkout")
+<br> 
+<br> 
+- 微信支付
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98.PNG "微信支付")
+<br> 
+<br> 
+- 订单详情
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85.PNG "订单详情")
+<br> 
+<br> 
+- 我的中心
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%88%91%E7%9A%84%E4%B8%AD%E5%BF%83.PNG "我的中心")
+<br> 
+<br> 
+- 订单列表
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E5%88%97%E8%A1%A8.PNG "订单列表")
+<br> 
+<br> 
+- 订单详情2
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%852.PNG "订单详情2")
+<br> 
+<br> 
+- 物流详情
+<br> 
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%89%A9%E6%B5%81%E8%AF%A6%E6%83%85.PNG "物流详情")
