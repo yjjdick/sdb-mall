@@ -1,8 +1,18 @@
+# sdb mall
 
 **项目说明** 
 - sdb是一个轻量级的在renren-fast基础上利用jfinal架构二次开发的一个极速二次开发商城框架，前后端分离的Java快速开发平台，C端采用微信小程序，能快速开发项目并交付【接私活利器】
 - 支持MySQL、Oracle、SQL Server、PostgreSQL等主流数据库
 - 重点说明：此项目并不是提供下载运行后直接就能上生产的情况，在我多年的经验里告诉我，所有的项目即使是商业模式非常相似但是在业务需求细节上也是有各种各种不同的变化，特别是在C端和campaign这块，举几个例子，在C端方面，你可能和别人使用完全色调，页面布局一模一样的页面吗？在后端同样一个优惠券的功能你能保证你不做一些定制化的实现吗？所以sdb mall这个架构是用来让你可以快速开发成自己独有的，个性化的商城项目，并非是提供大而全的功能，当然我也会在其中添加一些比较通用的功能，比如商城的完整流程和之后会开发一些分销模块等
+
+[![](https://img.shields.io/badge/%E4%BD%9C%E8%80%85-姚嘉钧-orange.svg)](https://github.com/yjjdick/sdb-mall) 
+[![](https://img.shields.io/badge/QQ-346743162-brightgreen.svg)]()
+
+****
+### Author yjjdick QQ：406123228 QQ群：346743162
+### E-mail:406123228@qq.com
+****
+
 <br> 
 <br>
 
