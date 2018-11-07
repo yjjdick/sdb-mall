@@ -80,8 +80,21 @@ public class OrderController {
     public R logistic(@LoginUser User user, @PathVariable String orderId) {
         OrderMaster orderMaster = orderService.findById(orderId);
         Logistics logistics = logisticsService.findById(orderMaster.getTrackingNumber());
+        Filter filter = new Filter();
+        filter.setProperty("order_id");
+        filter.setOperator(Filter.Operator.eq);
+        filter.setValue(orderId);
+
+        List<OrderDetail> orderDetails = orderDetailService.findByFilter(filter);
+        List<OrderDetailVO> orderDetailVOList = orderDetails.stream().map(item -> {
+            OrderDetailVO detailVO = new OrderDetailVO();
+            BeanUtils.copyProperties(item, detailVO);
+            return detailVO;
+        }).collect(Collectors.toList());
         OrderVO orderVO = new OrderVO();
         BeanUtils.copyProperties(orderMaster, orderVO);
+        orderVO.setOrderDetailList(orderDetailVOList);
+
         return R.ok().put("orderInfo", orderVO).put("logistics", logistics);
     }
 
