@@ -39,16 +39,16 @@ public class TestController {
         return R.ok().put("payResponse", payResponse);
     }
 
-    @GetMapping("/print")
+    @GetMapping("/ip")
     @ResponseBody
-    public String print() {
+    public String ip() {
         String host = null;
         try {
             host = InetAddress.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
-//            log.error("get server host Exception e:", e);
+            log.error("get server host Exception e:", e);
         }
-        return host+"_123456";
+        return host;
     }
 
     /**
