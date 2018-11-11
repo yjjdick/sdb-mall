@@ -9,6 +9,7 @@ public enum SnEnum {
     ORDER_MASTER(3,"order_master"),//订单
     ORDER_DETAIL(4,"order_detail"),//订单详情
     USER(5,"user"),//微信用户
+    GROUPON(6,"groupon"),//拼团
     ;
 
     private Integer code;

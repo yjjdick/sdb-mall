@@ -25,6 +25,14 @@ public abstract class BaseProduct<M extends BaseProduct<M>> extends Model<M> imp
 		return get("price");
 	}
 
+	public void setGroupPrice(java.math.BigDecimal groupPrice) {
+		set("group_price", groupPrice);
+	}
+	
+	public java.math.BigDecimal getGroupPrice() {
+		return get("group_price");
+	}
+
 	public void setCost(java.math.BigDecimal cost) {
 		set("cost", cost);
 	}

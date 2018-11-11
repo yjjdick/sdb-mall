@@ -71,7 +71,7 @@ public class SysProductCategoryController extends AbstractController {
 	 * 分类信息
 	 */
 	@GetMapping("/info/{productCategoryId}")
-	@RequiresPermissions("sys:productCategory:info")
+//	@RequiresPermissions("sys:productCategory:info")
 	public R info(@PathVariable("productCategoryId") Long productCategoryId){
 		ProductCategory productCategory = productCategoryService.findById(productCategoryId);
 		return R.ok().put("productCategory", productCategory);
@@ -81,7 +81,7 @@ public class SysProductCategoryController extends AbstractController {
 	 * 选择菜单(添加、修改菜单)
 	 */
 	@GetMapping("/select")
-	@RequiresPermissions("sys:productCategory:select")
+//	@RequiresPermissions("sys:productCategory:select")
 	public R select(){
 		//查询列表数据
 		List<ProductCategory> productCategoryList = productCategoryService.queryListOrder();
@@ -102,7 +102,7 @@ public class SysProductCategoryController extends AbstractController {
 	 */
 	@SysLog("保存商品类目")
 	@PostMapping("/save")
-	@RequiresPermissions("sys:productCategory:save")
+//	@RequiresPermissions("sys:productCategory:save")
 	public R save(@RequestBody ProductCategory productCategory){
 		//数据校验
 		verifyForm(productCategory);
@@ -116,7 +116,7 @@ public class SysProductCategoryController extends AbstractController {
 	 */
 	@SysLog("修改菜单")
 	@PostMapping("/update")
-	@RequiresPermissions("sys:productCategory:update")
+//	@RequiresPermissions("sys:productCategory:update")
 	public R update(@RequestBody ProductCategory productCategory){
 		//数据校验
 		verifyForm(productCategory);
@@ -130,7 +130,7 @@ public class SysProductCategoryController extends AbstractController {
 	 */
 	@SysLog("删除菜单")
 	@PostMapping("/delete/{productCategoryId}")
-	@RequiresPermissions("sys:productCategory:delete")
+//	@RequiresPermissions("sys:productCategory:delete")
 	public R delete(@PathVariable("productCategoryId") long productCategoryId){
 		return productCategoryService.delete(productCategoryId);
 	}

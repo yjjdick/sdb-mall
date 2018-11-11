@@ -22,6 +22,7 @@ public class ProductVO{
     Integer stock;
     String sn;
     BigDecimal price;
+    BigDecimal groupPrice;
     Integer enable;
     @JsonSerialize(using = Date2LongSerializer.class)
     Date createDate;

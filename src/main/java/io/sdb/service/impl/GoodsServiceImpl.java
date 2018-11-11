@@ -23,6 +23,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -85,6 +86,11 @@ public class GoodsServiceImpl extends BaseServiceImpl<GoodsDao, Goods> implement
         newGoods.setParameterValues(JSONArray.toJSONString(paraList));
         newGoods.setProductCategoryId(goods.getCategoryId().get(goods.getCategoryId().size() - 1));
         newGoods.setPrice(goods.getPrice());
+        if(goods.isGroupon()) {
+            //TODO 之后活动变多后需要用位运算
+            newGoods.setCampaign(1);
+            newGoods.setGrouponCount(goods.getGrouponCount());
+        }
 
         if(goods.isHasSpec()){
             newGoods.setSpecificationItems(JSONObject.toJSONString(goods.getSpecificationGroup()));
@@ -112,6 +118,12 @@ public class GoodsServiceImpl extends BaseServiceImpl<GoodsDao, Goods> implement
                 }
                 product.setIsDefault(defaultFlag);
                 product.setPrice(goodsSpecData.getPrice());
+                if(goods.isGroupon()) {
+                    product.setGroupPrice(goodsSpecData.getGroupPrice());
+                }else {
+                    product.setGroupPrice(BigDecimal.ZERO);
+                }
+
                 product.setCost(goodsSpecData.getCost());
                 product.setEnable(goodsSpecData.getEnable());
                 product.setSpecificationValues(goodsSpecData.getSpecIds());

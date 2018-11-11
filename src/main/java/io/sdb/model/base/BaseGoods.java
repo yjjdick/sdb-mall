@@ -105,6 +105,22 @@ public abstract class BaseGoods<M extends BaseGoods<M>> extends Model<M> impleme
 		return getStr("product_images");
 	}
 
+	public void setCampaign(java.lang.Integer campaign) {
+		set("campaign", campaign);
+	}
+	
+	public java.lang.Integer getCampaign() {
+		return getInt("campaign");
+	}
+
+	public void setGrouponCount(java.lang.Integer grouponCount) {
+		set("groupon_count", grouponCount);
+	}
+	
+	public java.lang.Integer getGrouponCount() {
+		return getInt("groupon_count");
+	}
+
 	public void setWeight(java.lang.Float weight) {
 		set("weight", weight);
 	}

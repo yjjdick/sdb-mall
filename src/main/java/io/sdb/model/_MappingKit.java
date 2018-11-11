@@ -23,6 +23,9 @@ public class _MappingKit {
 		// Composite Primary Key order: favorite_goods,favorite_user
 		arp.addMapping("favorite_goods", "favorite_goods,favorite_user", FavoriteGoods.class);
 		arp.addMapping("goods", "sn", Goods.class);
+		arp.addMapping("groupon", "id", Groupon.class);
+		// Composite Primary Key order: groupon_id,user_id
+		arp.addMapping("groupon_team", "groupon_id,user_id", GrouponTeam.class);
 		arp.addMapping("logistics", "tracking_no", Logistics.class);
 		arp.addMapping("order_detail", "detail_id", OrderDetail.class);
 		arp.addMapping("order_master", "order_id", OrderMaster.class);

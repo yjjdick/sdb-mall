@@ -25,6 +25,7 @@ public class OrderDetailVO {
     String productModel;
     String productSpec;
     BigDecimal productPrice;
+    BigDecimal groupPrice;
     Integer productQuantity;
     String productIcon;
     @JsonSerialize(using = Date2LongSerializer.class)

@@ -65,6 +65,30 @@ public abstract class BaseOrderMaster<M extends BaseOrderMaster<M>> extends Mode
 		return getInt("invoice_type");
 	}
 
+	public void setGroupon(java.lang.Integer groupon) {
+		set("groupon", groupon);
+	}
+	
+	public java.lang.Integer getGroupon() {
+		return getInt("groupon");
+	}
+
+	public void setGrouponId(java.lang.String grouponId) {
+		set("groupon_id", grouponId);
+	}
+	
+	public java.lang.String getGrouponId() {
+		return getStr("groupon_id");
+	}
+
+	public void setGrouponCount(java.lang.Integer grouponCount) {
+		set("groupon_count", grouponCount);
+	}
+	
+	public java.lang.Integer getGrouponCount() {
+		return getInt("groupon_count");
+	}
+
 	public void setTitle(java.lang.String title) {
 		set("title", title);
 	}

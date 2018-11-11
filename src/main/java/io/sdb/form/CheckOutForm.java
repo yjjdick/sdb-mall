@@ -16,5 +16,7 @@ public class CheckOutForm {
     private InvoiceInfo invoiceInfo;
     private ReceiveInfo receiveInfo;
     private boolean needInvoice;
+    private boolean groupon;
+    private String grouponId;
     private String remark;
 }

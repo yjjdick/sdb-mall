@@ -22,6 +22,7 @@ public class ProductDTO {
     Integer stock;
     String sn;
     BigDecimal price;
+    BigDecimal groupPrice;
     Integer enable;
     Integer quantity;
     Date createDate;

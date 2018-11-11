@@ -34,6 +34,8 @@ public class SnDao extends BaseDao<Sn> {
 	private int orderDetailMaxLo = 100;
 	private String userPrefix = "yyyyMMdd";
 	private int userMaxLo = 100;
+	private String grouponPrefix = "yyyyMMdd";
+	private int grouponMaxLo = 100;
 
 	/** 货品编号生成器 */
 	private HiloOptimizer goodsHiloOptimizer = new HiloOptimizer(SnEnum.GOODS, goodsPrefix, goodsMaxLo);
@@ -41,6 +43,7 @@ public class SnDao extends BaseDao<Sn> {
 	private HiloOptimizer orderMasterHiloOptimizer = new HiloOptimizer(SnEnum.ORDER_MASTER, orderMasterPrefix, orderMasterMaxLo);
 	private HiloOptimizer orderDetailHiloOptimizer = new HiloOptimizer(SnEnum.ORDER_DETAIL, orderDetailPrefix, orderDetailMaxLo);
 	private HiloOptimizer userHiloOptimizer = new HiloOptimizer(SnEnum.USER, userPrefix, userMaxLo);
+	private HiloOptimizer grouponHiloOptimizer = new HiloOptimizer(SnEnum.GROUPON, grouponPrefix, grouponMaxLo);
 
 	/**
 	 * 生成序列号
@@ -61,6 +64,8 @@ public class SnDao extends BaseDao<Sn> {
 				return orderDetailHiloOptimizer.generate();
 			case USER:
 				return userHiloOptimizer.generate();
+			case GROUPON:
+				return grouponHiloOptimizer.generate();
 		}
 		return null;
 	}

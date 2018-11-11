@@ -5,10 +5,11 @@
 	g.`sn` goods_sn,
 	g.caption caption,
 	g.image image,
-  p.specification_values specification_values,
-  p.stock stock,
+    p.specification_values specification_values,
+    p.stock stock,
 	p.sn sn,
 	p.price price,
+	p.group_price groupPrice,
 	p.`enable` `enable`,
 	p.create_date create_date
 FROM

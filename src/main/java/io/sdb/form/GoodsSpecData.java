@@ -10,6 +10,7 @@ public class GoodsSpecData {
     private String sn;
     private BigDecimal cost;
     private BigDecimal price;
+    private BigDecimal groupPrice;
     private Integer stock;
     private Boolean enable;
     private String specIds;

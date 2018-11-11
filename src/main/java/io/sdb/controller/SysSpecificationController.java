@@ -75,7 +75,7 @@ public class SysSpecificationController extends AbstractController{
 	 * 规格信息
 	 */
 	@GetMapping("/info/{id}")
-	@RequiresPermissions("sys:specification:info")
+//	@RequiresPermissions("sys:specification:info")
 	public R info(@PathVariable("id") Long id){
 		Specification specification = specificationService.findById(id);
 		return R.ok().put("specification", specification);
@@ -85,7 +85,7 @@ public class SysSpecificationController extends AbstractController{
 	 * 选择规格(添加、修改规格)
 	 */
 	@GetMapping("/select")
-	@RequiresPermissions("sys:specification:select")
+//	@RequiresPermissions("sys:specification:select")
 	public R select(){
 		//查询列表数据
 		List<Specification> specificationList = specificationService.queryListByOrder();
@@ -98,7 +98,7 @@ public class SysSpecificationController extends AbstractController{
 	 */
 	@SysLog("保存规格")
 	@PostMapping("/save")
-	@RequiresPermissions("sys:specification:save")
+//	@RequiresPermissions("sys:specification:save")
 	public R save(@RequestBody Specification specification){
 		//数据校验
 		verifyForm(specification);
@@ -112,7 +112,7 @@ public class SysSpecificationController extends AbstractController{
 	 */
 	@SysLog("修改规格")
 	@PostMapping("/update")
-	@RequiresPermissions("sys:specification:update")
+//	@RequiresPermissions("sys:specification:update")
 	public R update(@RequestBody Specification specification){
 		//数据校验
 		verifyForm(specification);
@@ -125,7 +125,7 @@ public class SysSpecificationController extends AbstractController{
 	 */
 	@SysLog("删除规格")
 	@PostMapping("/delete/{id}")
-	@RequiresPermissions("sys:specification:delete")
+//	@RequiresPermissions("sys:specification:delete")
 	public R delete(@PathVariable("id") long id){
 		return specificationService.delete(id);
 	}

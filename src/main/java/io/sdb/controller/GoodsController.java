@@ -25,8 +25,11 @@ import io.sdb.model.Goods;
 import io.sdb.model.ProductCategory;
 import io.sdb.common.annotation.Login;
 import io.sdb.form.GoodsListForm;
+import io.sdb.service.FavoriteGoodsService;
 import io.sdb.service.GoodsService;
 import io.sdb.service.ProductCategoryService;
+import io.sdb.vo.GoodsVO;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +46,8 @@ public class GoodsController {
 	private GoodsService goodsService;
 	@Autowired
 	private ProductCategoryService productCategoryService;
+	@Autowired
+	private FavoriteGoodsService favoriteGoodsService;
 
 	/**
 	 * 列表
@@ -52,6 +57,13 @@ public class GoodsController {
 	@GetMapping("/info/{goodId}")
 	public R info(@PathVariable String goodId){
 		Goods goods = goodsService.findById(goodId);
+
+		GoodsVO goodsVO = new GoodsVO();
+		BeanUtils.copyProperties(goods, goodsVO);
+
+		//读取收藏信息根据goodid设置vo Favorite
+		//favoriteGoodsService.XXXX
+		//goodsVO.setXXX 1.做事务 2.复用
 		return R.ok().put("goodsInfo", goods);
 	}
 

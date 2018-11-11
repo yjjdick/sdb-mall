@@ -12,6 +12,8 @@ public enum OrderStatusEnum implements IEnum {
     SHIPPING(1, "已发货"),
     FINISHED(2, "已完成"),
     CANCEL(3, "已取消"),
+    GROUPON_PENDING(4, "等待拼团"),
+    GROUPON_SUCC(5, "拼团成功"),
     ;
 
     private Integer code;

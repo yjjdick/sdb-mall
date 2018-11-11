@@ -18,6 +18,7 @@ import io.sdb.service.LogisticsService;
 import io.sdb.service.*;
 import io.sdb.vo.OrderDetailVO;
 import io.sdb.vo.OrderVO;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -48,6 +49,9 @@ public class OrderController {
 
     @Autowired
     ProductService productService;
+
+    @Autowired
+    GoodsService goodsService;
 
     @Autowired
     PayService payService;
@@ -136,7 +140,15 @@ public class OrderController {
             return orderDetailVO;
         }).collect(Collectors.toList());
         orderVO.setOrderDetailList(orderDetailVOList);
-        return R.ok().put("orderInfo", orderVO);
+
+        if (orderMaster.getGroupon() == GeneralEnum.TRUE.getCode()) {
+            OrderDetail orderDetail = orderDetailList.get(0);
+            String productId = orderDetail.getProductId();
+            Product product = productService.findById(productId);
+            return R.ok().put("orderInfo", orderVO).put("goodsId", product.getGoodsSn());
+        }else {
+            return R.ok().put("orderInfo", orderVO);
+        }
     }
 
     @Login
@@ -258,6 +270,23 @@ public class OrderController {
         orderDTO.setTitle(invoiceInfo.getTitle());
         orderDTO.setOrderStatus(OrderStatusEnum.NEW.getCode());
         orderDTO.setPayStatus(PayStatusEnum.WAIT.getCode());
+        if(checkOutForm.isGroupon()) {
+            if (!StringUtils.isBlank(checkOutForm.getGrouponId())) {
+                GrouponTeam grouponTeam = GrouponTeam.dao.findById(checkOutForm.getGrouponId(), user.getUserId());
+                if(grouponTeam != null) {
+                    throw new RRException(ResultEnum.GROUPON_USER_EXSITS);
+                }
+            }
+
+            orderDTO.setGroupon(GeneralEnum.TRUE.getCode());
+            orderDTO.setGrouponId(checkOutForm.getGrouponId());
+            ProductDTO productDTO = productList.get(0);
+            Goods goods = goodsService.findById(productDTO.getGoodsSn());
+            orderDTO.setGrouponCount(goods.getGrouponCount());
+        }else {
+            orderDTO.setGroupon(GeneralEnum.FALSE.getCode());
+        }
+
         List<OrderDetail> orderDetails = productList.stream().map(item->{
             OrderDetail orderDetail = new OrderDetail();
             String sn = snService.generate(SnEnum.ORDER_MASTER);
@@ -268,6 +297,7 @@ public class OrderController {
             orderDetail.setProductModel(item.getModel());
             orderDetail.setProductSpec(item.getSpecificationValues());
             orderDetail.setProductPrice(item.getPrice());
+            orderDetail.setGroupPrice(item.getGroupPrice());
             orderDetail.setProductQuantity(item.getQuantity());
             return orderDetail;
         }).collect(Collectors.toList());

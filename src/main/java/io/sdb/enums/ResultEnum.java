@@ -43,6 +43,7 @@ public enum ResultEnum {
     ORDER_FINISH_SUCCESS(2023, "订单完结成功"),
 
     PRODUCT_STATUS_ERROR(2024, "商品状态不正确"),
+    GROUPON_USER_EXSITS(2025, "不能重复参团"),
     ;
 
     private Integer code;

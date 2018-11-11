@@ -10,15 +10,11 @@ import io.sdb.common.utils.PageUtils;
 import io.sdb.common.utils.Query;
 import io.sdb.config.OrderProperties;
 import io.sdb.dao.OrderMasterDao;
+import io.sdb.dao.SnDao;
 import io.sdb.dto.CartDTO;
 import io.sdb.dto.OrderDTO;
-import io.sdb.enums.OrderStatusEnum;
-import io.sdb.enums.PayStatusEnum;
-import io.sdb.enums.ResultEnum;
-import io.sdb.enums.SnEnum;
-import io.sdb.model.Goods;
-import io.sdb.model.OrderDetail;
-import io.sdb.model.OrderMaster;
+import io.sdb.enums.*;
+import io.sdb.model.*;
 import io.sdb.service.LogisticsService;
 import io.sdb.service.*;
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +34,8 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 public class OrderMasterServiceImpl extends BaseServiceImpl<OrderMasterDao, OrderMaster> implements OrderMasterService {
+
+    private final Integer GROUPON_EXPIRE_DAY = 2;
 
     @Autowired
     ProductService productService;
@@ -59,6 +57,19 @@ public class OrderMasterServiceImpl extends BaseServiceImpl<OrderMasterDao, Orde
 
     @Autowired
     OrderProperties orderProperties;
+
+    @Autowired
+    GrouponService grouponService;
+
+    @Autowired
+    GrouponTeamService grouponTeamService;
+
+
+    @Autowired
+    GoodsService goodsService;
+
+    @Autowired
+    SnDao snDao;
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -98,9 +109,16 @@ public class OrderMasterServiceImpl extends BaseServiceImpl<OrderMasterDao, Orde
 //            }
 
             //2. 计算订单总价
-            orderAmount = orderDetail.getProductPrice()
-                    .multiply(new BigDecimal(orderDetail.getProductQuantity()))
-                    .add(orderAmount);
+            if (orderDTO.getGroupon() == GeneralEnum.TRUE.getCode()) {
+                orderAmount = orderDetail.getGroupPrice()
+                        .multiply(new BigDecimal(orderDetail.getProductQuantity()))
+                        .add(orderAmount);
+            } else{
+                orderAmount = orderDetail.getProductPrice()
+                        .multiply(new BigDecimal(orderDetail.getProductQuantity()))
+                        .add(orderAmount);
+            }
+
 
             //订单详情入库
             String orderDetailId = snService.generate(SnEnum.ORDER_DETAIL);
@@ -173,12 +191,80 @@ public class OrderMasterServiceImpl extends BaseServiceImpl<OrderMasterDao, Orde
             return orderMaster;
         }
 
+        boolean grouponSucc = false;
+
+        if (orderMaster.getGroupon() == GeneralEnum.TRUE.getCode()) {
+            orderMaster.setOrderStatus(OrderStatusEnum.GROUPON_PENDING.getCode());
+
+            if (StringUtils.isBlank(orderMaster.getGrouponId())) {
+                String sn = snDao.generate(SnEnum.GROUPON);
+                Groupon groupon = new Groupon();
+                OrderDetail queryOrderDetail = new OrderDetail();
+                queryOrderDetail.setOrderId(orderMaster.getOrderId());
+                OrderDetail orderDetail = orderDetailService.findFirstByModel(queryOrderDetail);
+                String productId = orderDetail.getProductId();
+                Product product = productService.findById(productId);
+                groupon.setGoodsId(product.getGoodsSn());
+                groupon.setId(sn);
+                groupon.setCreateDate(new Date());
+                groupon.setUpdateDate(new Date());
+                groupon.setCount(orderMaster.getGrouponCount());
+                groupon.setStatus(GrouponStatusEnum.PENDING.getCode());
+                Date expireTime = DateUtil.offsetDay(new Date(), GROUPON_EXPIRE_DAY);
+                groupon.setExpireDate(expireTime);
+                grouponService.insert(groupon);
+
+                GrouponTeam grouponTeam = new GrouponTeam();
+                grouponTeam.setCaptain(GeneralEnum.TRUE.getCode());
+                grouponTeam.setGrouponId(sn);
+                grouponTeam.setCreateDate(new Date());
+                grouponTeam.setUpdateDate(new Date());
+                grouponTeam.setUserId(orderMaster.getBuyerId());
+                grouponTeamService.insert(grouponTeam);
+
+                orderMaster.setGrouponId(sn);
+            }else {
+                GrouponTeam grouponTeam = new GrouponTeam();
+                grouponTeam.setCaptain(GeneralEnum.FALSE.getCode());
+                grouponTeam.setGrouponId(orderMaster.getGrouponId());
+                grouponTeam.setUpdateDate(new Date());
+                grouponTeam.setUserId(orderMaster.getBuyerId());
+                grouponTeamService.insert(grouponTeam);
+
+                Filter filter = new Filter();
+                filter.setProperty("group_id");
+                filter.setValue(orderMaster.getGrouponId());
+                filter.setOperator(Filter.Operator.eq);
+
+                List<GrouponTeam> grouponTeamList = grouponTeamService.findByFilter(filter);
+                if (grouponTeamList.size() >= orderMaster.getGrouponCount()) {
+                    Groupon groupon = new Groupon();
+                    groupon.setId(orderMaster.getGrouponId());
+                    groupon.setStatus(GrouponStatusEnum.OPEN.getCode());
+                    groupon.setUpdateDate(new Date());
+                    groupon.update();
+
+                    orderMaster.setOrderStatus(OrderStatusEnum.GROUPON_SUCC.getCode());
+                    grouponSucc = true;
+                }
+            }
+
+
+        }
+
         //修改支付状态
         orderMaster.setPayStatus(PayStatusEnum.SUCCESS.getCode());
         orderMaster.setUpdateDate(new Date());
         if (!orderMaster.update()) {
             log.error("【订单支付完成】更新失败, orderMaster={}", orderMaster);
             throw new RRException(ResultEnum.ORDER_UPDATE_FAIL);
+        }
+
+        if (grouponSucc) {
+            OrderMaster uptOrder = new OrderMaster();
+            uptOrder.setGrouponId(orderMaster.getGrouponId());
+            uptOrder.setOrderStatus(OrderStatusEnum.GROUPON_SUCC.getCode());
+            uptOrder.update();
         }
 
         return orderMaster;

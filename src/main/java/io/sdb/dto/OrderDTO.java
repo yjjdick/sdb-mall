@@ -68,6 +68,10 @@ public class OrderDTO {
     private String trackingNumber;
     private String deliveryCode;
 
+    private Integer groupon;
+    private String grouponId;
+    private Integer grouponCount;
+
     /** 创建时间. */
     @JsonSerialize(using = Date2LongSerializer.class)
     private Date createTime;

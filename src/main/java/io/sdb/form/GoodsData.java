@@ -13,6 +13,8 @@ public class GoodsData {
     private String caption;
     private String unit;
     private boolean hasSpec;
+    private boolean groupon;
+    private Integer grouponCount;
     private boolean delivery;
     private boolean marketable;
     private Integer productDefault;

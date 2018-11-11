@@ -57,6 +57,14 @@ public abstract class BaseOrderDetail<M extends BaseOrderDetail<M>> extends Mode
 		return getStr("product_spec");
 	}
 
+	public void setGroupPrice(java.math.BigDecimal groupPrice) {
+		set("group_price", groupPrice);
+	}
+	
+	public java.math.BigDecimal getGroupPrice() {
+		return get("group_price");
+	}
+
 	public void setProductPrice(java.math.BigDecimal productPrice) {
 		set("product_price", productPrice);
 	}
