@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.sdb</groupId>
     <artifactId>sdb</artifactId>
-    <version>2.0.0</version>
+    <version>1.0.0</version>
     <packaging>war</packaging>
     <description>war包对应的pom，打war包，执行【mvn clean package -f pom-war.xml】</description>
 

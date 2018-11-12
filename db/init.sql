@@ -676,6 +676,21 @@ CREATE TABLE `user` (
   KEY `idex_mobile` (`mobile`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户';
 
+-- ----------------------------
+-- 拼团
+-- ----------------------------
+DROP TABLE IF EXISTS `groupon`;
+CREATE TABLE `groupon` (
+  `id` varchar(50) NOT NULL,
+  `goods_id` varchar(50) NOT NULL,
+  `count` int(11) NOT NULL,
+  `status` smallint(1) NOT NULL DEFAULT '0' COMMENT '0-等待开团 1-已开团 2-取消',
+  `expire_date` datetime NOT NULL,
+  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 -- 初始数据
 INSERT INTO `sys_user` (`user_id`, `username`, `password`, `salt`, `email`, `mobile`, `status`, `create_user_id`, `create_time`) VALUES ('1', 'admin', '9ec9750e709431dad22365cabc5c625482e574c74adaebba7dd02f1129e4ce1d', 'YzcmCZNvbXocrsz9dm8e', 'root@sdb.io', '13612345678', '1', '1', '2016-11-11 11:11:11');

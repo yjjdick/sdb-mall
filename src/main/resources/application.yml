@@ -33,9 +33,9 @@ spring:
     redis:
         open: false  # 是否开启redis缓存  true开启   false关闭
         database: 0
-        host:
+        host: 127.0.0.1
         port: 6379
-        password:    # 密码（默认为空）
+        password: 123456 # 密码（默认为空）
         timeout: 6000ms  # 连接超时时长（毫秒）
         jedis:
           pool:
@@ -49,8 +49,8 @@ spring:
         add-mappings: false
     mail:
         host: smtp.163.com
-        username:
-        password:
+        username: yaojiajunnsh@163.com
+        password: yjj123456
         properties:
           mail:
             smtp:
