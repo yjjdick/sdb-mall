@@ -691,6 +691,19 @@ CREATE TABLE `groupon` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- ----------------------------
+-- 拼团队伍
+-- ----------------------------
+DROP TABLE IF EXISTS `groupon_team`;
+CREATE TABLE `groupon_team` (
+  `groupon_id` varchar(50) NOT NULL,
+  `user_id` varchar(50) NOT NULL,
+  `captain` smallint(1) NOT NULL DEFAULT '0',
+  `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`groupon_id`,`user_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 -- 初始数据
 INSERT INTO `sys_user` (`user_id`, `username`, `password`, `salt`, `email`, `mobile`, `status`, `create_user_id`, `create_time`) VALUES ('1', 'admin', '9ec9750e709431dad22365cabc5c625482e574c74adaebba7dd02f1129e4ce1d', 'YzcmCZNvbXocrsz9dm8e', 'root@sdb.io', '13612345678', '1', '1', '2016-11-11 11:11:11');
