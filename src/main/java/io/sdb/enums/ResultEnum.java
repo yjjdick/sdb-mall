@@ -44,6 +44,7 @@ public enum ResultEnum {
 
     PRODUCT_STATUS_ERROR(2024, "商品状态不正确"),
     GROUPON_USER_EXSITS(2025, "不能重复参团"),
+    GROUPON_NOT_ENOUGH(2026, "拼团人数已满"),
     ;
 
     private Integer code;

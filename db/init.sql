@@ -291,7 +291,7 @@ CREATE TABLE `favorite_goods` (
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
-  `sn` varchar(255) NOT NULL COMMENT '编号',
+  `sn` varchar(50) NOT NULL COMMENT '编号',
   `name` varchar(255) NOT NULL COMMENT '名称',
   `model` varchar(50) DEFAULT NULL COMMENT '型号',
   `caption` varchar(255) NOT NULL COMMENT '副标题',
@@ -303,6 +303,8 @@ CREATE TABLE `goods` (
   `specification_items` longtext COMMENT '规格项',
   `introduction` longtext NOT NULL COMMENT '介绍',
   `product_images` longtext NOT NULL COMMENT '商品图片',
+  `campaign` int(11) DEFAULT NULL COMMENT '活动,位运算，1-拼团',
+  `groupon_count` int(11) DEFAULT NULL COMMENT '拼团人数',
   `weight` float(11,0) NOT NULL COMMENT '重量',
   `unit` varchar(255) NOT NULL COMMENT '单位',
   `product_category_id` bigint(20) NOT NULL COMMENT '货品分类',
@@ -338,6 +340,7 @@ CREATE TABLE `order_detail` (
   `product_name` varchar(64) NOT NULL COMMENT '商品名称',
   `product_model` varchar(50) DEFAULT NULL COMMENT '型号',
   `product_spec` varchar(50) DEFAULT NULL COMMENT '规格',
+  `group_price` decimal(21,2) DEFAULT NULL COMMENT '团购价',
   `product_price` decimal(21,2) NOT NULL COMMENT '当前价格,单位分',
   `product_quantity` int(11) NOT NULL COMMENT '数量',
   `product_icon` varchar(512) DEFAULT NULL COMMENT '小图',
@@ -359,6 +362,9 @@ CREATE TABLE `order_master` (
   `buyer_id` varchar(64) NOT NULL COMMENT '买家id',
   `need_invoice` smallint(1) DEFAULT NULL COMMENT '是否需要开票 0-不需要 1-需要',
   `invoice_type` smallint(1) DEFAULT NULL COMMENT '发票类型 0-单位 1-个人',
+  `groupon` smallint(1) DEFAULT NULL COMMENT '拼团',
+  `groupon_id` varchar(50) DEFAULT NULL COMMENT '拼团id',
+  `groupon_count` int(11) DEFAULT NULL COMMENT '拼团人数',
   `title` varchar(255) DEFAULT NULL COMMENT '发票抬头',
   `tax_number` varchar(255) DEFAULT NULL COMMENT '抬头税号',
   `company_address` varchar(255) DEFAULT NULL COMMENT '单位地址',
@@ -387,6 +393,7 @@ DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `sn` varchar(255) NOT NULL COMMENT '商品编号',
   `price` decimal(21,2) NOT NULL DEFAULT '0.00' COMMENT '销售价',
+  `group_price` decimal(21,2) NOT NULL DEFAULT '0.00' COMMENT '拼团价',
   `cost` decimal(21,2) NOT NULL DEFAULT '0.00' COMMENT '成本价',
   `is_default` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否默认',
   `specification_values` longtext COMMENT '规格值',

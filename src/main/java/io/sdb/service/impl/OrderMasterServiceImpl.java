@@ -97,6 +97,20 @@ public class OrderMasterServiceImpl extends BaseServiceImpl<OrderMasterDao, Orde
     @Override
     @JFinalTx
     public OrderDTO create(OrderDTO orderDTO) {
+        if (orderDTO.getGroupon() == GeneralEnum.TRUE.getCode() &&  !StringUtils.isBlank(orderDTO.getGrouponId())) {
+            Groupon groupon = grouponService.findById(orderDTO.getGrouponId());
+            Integer total = groupon.getCount();
+            Filter filter = new Filter();
+            filter.setProperty("groupon_id");
+            filter.setOperator(Filter.Operator.eq);
+            filter.setValue(orderDTO.getGrouponId());
+
+            List<GrouponTeam> grouponTeamList = grouponTeamService.findByFilter(filter);
+            Integer joinCount = grouponTeamList.size();
+            if (total <= joinCount) {
+                throw new RRException(ResultEnum.GROUPON_NOT_ENOUGH);
+            }
+        }
 
         String orderId = snService.generate(SnEnum.ORDER_MASTER);
         BigDecimal orderAmount = new BigDecimal(BigInteger.ZERO);
