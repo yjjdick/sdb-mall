@@ -1,7 +1,10 @@
 package io.sdb.service.impl;
 
 import cn.hutool.core.date.DateUtil;
+import com.jfinal.kit.Kv;
+import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.SqlPara;
 import io.sdb.common.annotation.JFinalTx;
 import io.sdb.common.entity.Filter;
 import io.sdb.common.entity.Order;
@@ -97,21 +100,6 @@ public class OrderMasterServiceImpl extends BaseServiceImpl<OrderMasterDao, Orde
     @Override
     @JFinalTx
     public OrderDTO create(OrderDTO orderDTO) {
-        if (orderDTO.getGroupon() == GeneralEnum.TRUE.getCode() &&  !StringUtils.isBlank(orderDTO.getGrouponId())) {
-            Groupon groupon = grouponService.findById(orderDTO.getGrouponId());
-            Integer total = groupon.getCount();
-            Filter filter = new Filter();
-            filter.setProperty("groupon_id");
-            filter.setOperator(Filter.Operator.eq);
-            filter.setValue(orderDTO.getGrouponId());
-
-            List<GrouponTeam> grouponTeamList = grouponTeamService.findByFilter(filter);
-            Integer joinCount = grouponTeamList.size();
-            if (total <= joinCount) {
-                throw new RRException(ResultEnum.GROUPON_NOT_ENOUGH);
-            }
-        }
-
         String orderId = snService.generate(SnEnum.ORDER_MASTER);
         BigDecimal orderAmount = new BigDecimal(BigInteger.ZERO);
 
@@ -192,6 +180,12 @@ public class OrderMasterServiceImpl extends BaseServiceImpl<OrderMasterDao, Orde
     }
 
     @Override
+    public Boolean updateByGrouponId(String grouponId,Integer status) {
+        SqlPara sqlPara = Db.getSqlPara("order.updateByGrouponId", Kv.by("orderStatus", status).set("grouponId", grouponId));
+        return Db.update(sqlPara) > 0;
+    }
+
+    @Override
     @JFinalTx
     public OrderMaster paid(OrderMaster orderMaster) {
         //判断订单状态
@@ -246,7 +240,7 @@ public class OrderMasterServiceImpl extends BaseServiceImpl<OrderMasterDao, Orde
                 grouponTeamService.insert(grouponTeam);
 
                 Filter filter = new Filter();
-                filter.setProperty("group_id");
+                filter.setProperty("groupon_id");
                 filter.setValue(orderMaster.getGrouponId());
                 filter.setOperator(Filter.Operator.eq);
 
@@ -275,10 +269,7 @@ public class OrderMasterServiceImpl extends BaseServiceImpl<OrderMasterDao, Orde
         }
 
         if (grouponSucc) {
-            OrderMaster uptOrder = new OrderMaster();
-            uptOrder.setGrouponId(orderMaster.getGrouponId());
-            uptOrder.setOrderStatus(OrderStatusEnum.GROUPON_SUCC.getCode());
-            uptOrder.update();
+            this.updateByGrouponId(orderMaster.getGrouponId(), OrderStatusEnum.GROUPON_SUCC.getCode());
         }
 
         return orderMaster;

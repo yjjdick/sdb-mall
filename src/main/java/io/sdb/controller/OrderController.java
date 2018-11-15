@@ -59,6 +59,12 @@ public class OrderController {
     @Autowired
     LogisticsService logisticsService;
 
+    @Autowired
+    GrouponService grouponService;
+
+    @Autowired
+    GrouponTeamService grouponTeamService;
+
 
     @Login
     @PostMapping("refund")
@@ -170,6 +176,16 @@ public class OrderController {
             filter.setValue(orderDetailForm.getOrderStatus());
             filterList.add(filter);
         }
+
+        if (orderDetailForm.getOrderStatus() == OrderStatusEnum.NEW.getCode()) {
+            filter = new Filter();
+            filter.setProperty("order_status");
+            filter.setOperator(Filter.Operator.in);
+            filter.setValue(OrderStatusEnum.GROUPON_SUCC.getCode());
+            filter.setWhereOpt(Filter.WhereOpt.or);
+            filterList.add(filter);
+        }
+
         if (orderDetailForm.getPayStatus() != -1) {
             filter = new Filter();
             filter.setProperty("pay_status");
@@ -232,6 +248,26 @@ public class OrderController {
             throw new RRException(ResultEnum.CART_CANNOT_NULL);
         }
 
+        if (checkOutForm.isGroupon() && !StringUtils.isBlank(checkOutForm.getGrouponId())) {
+            Groupon groupon = grouponService.findById(checkOutForm.getGrouponId());
+            Integer total = groupon.getCount();
+            Filter filter = new Filter();
+            filter.setProperty("groupon_id");
+            filter.setOperator(Filter.Operator.eq);
+            filter.setValue(checkOutForm.getGrouponId());
+
+            List<GrouponTeam> grouponTeamList = grouponTeamService.findByFilter(filter);
+            Integer joinCount = grouponTeamList.size();
+            if (total <= joinCount) {
+                throw new RRException(ResultEnum.GROUPON_NOT_ENOUGH);
+            }
+
+            GrouponTeam grouponTeam = grouponTeamService.findById(checkOutForm.getGrouponId(), user.getUserId());
+            if(grouponTeam != null) {
+                throw new RRException(ResultEnum.GROUPON_USER_EXSITS);
+            }
+        }
+
         InvoiceInfo invoiceInfo = checkOutForm.getInvoiceInfo();
         ReceiveInfo receiveInfo = checkOutForm.getReceiveInfo();
 
@@ -271,13 +307,6 @@ public class OrderController {
         orderDTO.setOrderStatus(OrderStatusEnum.NEW.getCode());
         orderDTO.setPayStatus(PayStatusEnum.WAIT.getCode());
         if(checkOutForm.isGroupon()) {
-            if (!StringUtils.isBlank(checkOutForm.getGrouponId())) {
-                GrouponTeam grouponTeam = GrouponTeam.dao.findById(checkOutForm.getGrouponId(), user.getUserId());
-                if(grouponTeam != null) {
-                    throw new RRException(ResultEnum.GROUPON_USER_EXSITS);
-                }
-            }
-
             orderDTO.setGroupon(GeneralEnum.TRUE.getCode());
             orderDTO.setGrouponId(checkOutForm.getGrouponId());
             ProductDTO productDTO = productList.get(0);

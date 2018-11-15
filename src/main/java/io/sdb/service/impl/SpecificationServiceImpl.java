@@ -21,7 +21,7 @@ public class SpecificationServiceImpl extends BaseServiceImpl<SpecificationDao, 
 
     @Override
     public List<Specification> queryListByOrder() {
-        return this.dao.findAll();
+        return this.findByFilter(Filter.isNull("parent_id"));
     }
 
     @Override

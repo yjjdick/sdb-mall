@@ -26,6 +26,10 @@
   #include("cart.sql")
 #end
 
+#namespace("order")
+  #include("order.sql")
+#end
+
 #namespace("productCategory")
   #include("productCategory.sql")
 #end

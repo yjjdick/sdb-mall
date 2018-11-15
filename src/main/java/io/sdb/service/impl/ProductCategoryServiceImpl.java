@@ -64,6 +64,14 @@ public class ProductCategoryServiceImpl extends BaseServiceImpl<ProductCategoryD
 
     @Override
     public R save(ProductCategory productCategory) {
+
+        if (productCategory.getParentId() == null) {
+            productCategory.setTreePath(","+productCategory.getId()+",");
+        } else {
+            ProductCategory parent = this.findById(productCategory.getParentId());
+            productCategory.setTreePath(parent.getTreePath() + productCategory.getId() + ",");
+        }
+
         productCategory.save();
         return R.ok();
     }

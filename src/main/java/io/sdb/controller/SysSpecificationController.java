@@ -17,6 +17,7 @@
 package io.sdb.controller;
 
 import io.sdb.common.annotation.SysLog;
+import io.sdb.common.entity.Filter;
 import io.sdb.common.exception.RRException;
 import io.sdb.common.utils.R;
 import io.sdb.common.utils.TreeBuilder;
@@ -44,6 +45,23 @@ public class SysSpecificationController extends AbstractController{
 	@GetMapping("/tree")
 	public R tree(){
 		List<Specification> specificationList = specificationService.findAll();
+
+		List<SpecificationVO> specificationVOList = specificationList.stream().map(item -> {
+			SpecificationVO specificationVO = new SpecificationVO(item);
+			return specificationVO;
+		}).collect(Collectors.toList());
+		List<SpecificationVO> specificationTree = new TreeBuilder().buildTree(specificationVOList);
+
+		return R.ok().put("specificationTree", specificationTree);
+	}
+
+	/**
+	 * 列表
+	 */
+	@ResponseBody
+	@GetMapping("/treeParent")
+	public R treeParent(){
+		List<Specification> specificationList = specificationService.findByFilter(Filter.isNull("parent"));
 
 		List<SpecificationVO> specificationVOList = specificationList.stream().map(item -> {
 			SpecificationVO specificationVO = new SpecificationVO(item);

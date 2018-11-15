@@ -16,6 +16,9 @@ public interface OrderMasterService extends BaseService<OrderMaster> {
 
     OrderMaster cancel(String orderId);
 
+
+    Boolean updateByGrouponId(String grouponId,Integer status);
+
     /** 支付订单. */
     OrderMaster paid(OrderMaster orderMaster);
 

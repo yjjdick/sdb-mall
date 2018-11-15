@@ -1,11 +1,13 @@
 package io.sdb.resolver;
 
+import io.sdb.common.exception.RRException;
 import io.sdb.model.User;
 import io.sdb.common.annotation.LoginUser;
 import io.sdb.interceptor.AuthorizationInterceptor;
 import io.sdb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -35,12 +37,14 @@ public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgu
         //获取用户ID
         Object object = request.getAttribute(AuthorizationInterceptor.USER_KEY, RequestAttributes.SCOPE_REQUEST);
         if(object == null){
-            return null;
+            throw new RRException("token失效，请重新登录", HttpStatus.UNAUTHORIZED.value());
         }
 
         //获取用户信息
         User user = userService.findById((Long)object);
-
+        if (user == null) {
+            throw new RRException("token失效，请重新登录", HttpStatus.UNAUTHORIZED.value());
+        }
         return user;
     }
 }
