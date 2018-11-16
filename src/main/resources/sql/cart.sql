@@ -7,7 +7,8 @@
 	p.specification_values specification_values,
 	c.quantity quantity,
 	p.price price,
-  g.image image
+  g.image image,
+  g.sn goodsId
 FROM
 	cart c
 	LEFT JOIN product p ON c.product_id = p.sn

@@ -29,6 +29,8 @@ public class CartDTO {
 
     String image;
 
+    String goodsId;
+
     public CartDTO() {
     }
 

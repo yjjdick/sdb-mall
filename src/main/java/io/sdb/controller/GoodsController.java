@@ -17,14 +17,17 @@
 package io.sdb.controller;
 
 import com.jfinal.plugin.activerecord.Page;
+import io.sdb.common.annotation.LoginUser;
 import io.sdb.common.entity.Filter;
 import io.sdb.common.entity.Order;
 import io.sdb.common.utils.R;
 import io.sdb.enums.GeneralEnum;
+import io.sdb.model.FavoriteGoods;
 import io.sdb.model.Goods;
 import io.sdb.model.ProductCategory;
 import io.sdb.common.annotation.Login;
 import io.sdb.form.GoodsListForm;
+import io.sdb.model.User;
 import io.sdb.service.FavoriteGoodsService;
 import io.sdb.service.GoodsService;
 import io.sdb.service.ProductCategoryService;
@@ -55,16 +58,27 @@ public class GoodsController {
 	@ResponseBody
 	@Login
 	@GetMapping("/info/{goodId}")
-	public R info(@PathVariable String goodId){
+	public R info(@LoginUser User user, @PathVariable String goodId){
 		Goods goods = goodsService.findById(goodId);
 
 		GoodsVO goodsVO = new GoodsVO();
 		BeanUtils.copyProperties(goods, goodsVO);
-
-		//读取收藏信息根据goodid设置vo Favorite
-		//favoriteGoodsService.XXXX
-		//goodsVO.setXXX 1.做事务 2.复用
-		return R.ok().put("goodsInfo", goods);
+		List<Filter> filterList = new ArrayList<>();
+		Filter filterGoods = new Filter();
+		filterGoods.setProperty("favorite_goods");
+		filterGoods.setOperator(Filter.Operator.eq);
+		filterGoods.setValue(goodId);
+		Filter filterUser = new Filter();
+		filterUser.setProperty("favorite_user");
+		filterUser.setOperator(Filter.Operator.eq);
+		filterUser.setValue(user.getUserId());
+		filterList.add(filterGoods);
+		filterList.add(filterUser);
+		List<FavoriteGoods> favoriteGoodsList = favoriteGoodsService.findByFilters(filterList);
+		if(favoriteGoodsList!=null && favoriteGoodsList.size()>0){
+			goodsVO.setFavorite(true);
+		}
+		return R.ok().put("goodsInfo", goodsVO);
 	}
 
 	/**

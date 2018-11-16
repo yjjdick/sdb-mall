@@ -6,5 +6,5 @@ import lombok.Data;
 
 @Data
 public class GoodsVO extends Goods {
-    Boolean favorite;
+    Boolean favorite = false;
 }

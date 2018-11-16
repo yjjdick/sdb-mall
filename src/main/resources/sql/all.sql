@@ -33,3 +33,7 @@
 #namespace("productCategory")
   #include("productCategory.sql")
 #end
+
+#namespace("favoriteGoods")
+  #include("favoriteGoods.sql")
+#end
