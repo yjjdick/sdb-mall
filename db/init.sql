@@ -755,8 +755,9 @@ INSERT INTO `schedule_job` (`bean_name`, `method_name`, `params`, `cron_expressi
 INSERT INTO `schedule_job` (`bean_name`, `method_name`, `params`, `cron_expression`, `status`, `remark`, `create_time`) VALUES ('testTask', 'test2', NULL, '0 0/30 * * * ?', '1', '无参数测试', '2016-12-03 14:55:56');
 
 
-INSERT INTO `sn`(`type`, `last_value`, `create_date`, `modify_date`) VALUES (1, 111, '2018-05-23 14:52:55', '2018-05-23 14:52:55');
-INSERT INTO `sn`(`type`, `last_value`, `create_date`, `modify_date`) VALUES (2, 111, '2018-05-23 14:52:55', '2018-05-23 14:52:55');
-INSERT INTO `sn`(`type`, `last_value`, `create_date`, `modify_date`) VALUES (3, 129, '2018-05-23 14:52:55', '2018-05-23 14:52:55');
-INSERT INTO `sn`(`type`, `last_value`, `create_date`, `modify_date`) VALUES (4, 125, '2018-05-23 14:52:55', '2018-05-23 14:52:55');
-INSERT INTO `sn`(`type`, `last_value`, `create_date`, `modify_date`) VALUES (5, 104, '2018-05-23 14:52:55', '2018-05-23 14:52:55');
+INSERT INTO `sn`(`type`, `last_value`, `create_date`, `modify_date`) VALUES (1, 100, '2018-05-23 14:52:55', '2018-05-23 14:52:55');
+INSERT INTO `sn`(`type`, `last_value`, `create_date`, `modify_date`) VALUES (2, 100, '2018-05-23 14:52:55', '2018-05-23 14:52:55');
+INSERT INTO `sn`(`type`, `last_value`, `create_date`, `modify_date`) VALUES (3, 100, '2018-05-23 14:52:55', '2018-05-23 14:52:55');
+INSERT INTO `sn`(`type`, `last_value`, `create_date`, `modify_date`) VALUES (4, 100, '2018-05-23 14:52:55', '2018-05-23 14:52:55');
+INSERT INTO `sn`(`type`, `last_value`, `create_date`, `modify_date`) VALUES (5, 100, '2018-05-23 14:52:55', '2018-05-23 14:52:55');
+INSERT INTO `sn`(`type`, `last_value`, `create_date`, `modify_date`) VALUES (6, 100, '2018-05-23 14:52:55', '2018-05-23 14:52:55');

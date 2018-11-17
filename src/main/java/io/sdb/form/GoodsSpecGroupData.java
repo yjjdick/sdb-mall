@@ -7,6 +7,6 @@ import java.util.List;
 
 @Data
 public class GoodsSpecGroupData {
-    private String specificationName;
-    private List<String> specificationEntries;
+    private Long specificationName;
+    private List<Long> specificationEntries;
 }
