@@ -71,7 +71,7 @@ sdb
 - 开发文档：正在设计中
 - Github仓库：https://github.com/yjjdick/sdb-mall  
 - Gitee仓库：https://gitee.com/yjjdick/sdb-mall
-- 官方QQ交流群：346743162
+- 官方QQ交流群：346743162<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=001dc5c4b5bf9abe5b187aa0d058ac9a19f0c98295647f9fa7c1a6b496b1b59f"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="森多邦商城交流群" title="森多邦商城交流群"></a>
 - 技术讨论、二次开发等咨询、问题和建议，请移步到交流群！
 - 如需关注项目最新动态，请Watch、Star项目，同时也是对项目最好的支持
 <br>
@@ -93,8 +93,6 @@ sdb
 - 执行db/init.sql文件，初始化数据
 - 修改application-dev.yml，更新MySQL账号和密码
 - Eclipse、IDEA运行sdbApplication.java，则可启动项目
-- 项目后端地址：http://localhost:8080/sdb
-- Swagger路径：http://localhost:8080/sdb/swagger/index.html
 <br>
 
  **前端部署**
@@ -115,17 +113,15 @@ sdb
 - 客服系统
 - 物流系统（快递100）
 - 邮件接口
-- 拼团模块（已完成待上线）
+- 拼团模块
 - 各种campaign（正在开发）
 <br>
 
  **介绍和使用视频**
-- 视频地址：https://www.bilibili.com/video/av35454220/
-- 小程序业务介绍：已完成
-- 后端管理系统业务介绍：已完成
-- 极速二次开发：已完成
-- 项目安装及启动：已完成
-- 不写一行sql完成复杂数据库操作+黑科技：制作中...
+- 视频地址：请关注公众号，在公众号内查看
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%85%AC%E4%BC%97%E5%8F%B7.jpg?x-oss-process=image/resize,p_30 "工作室公众号")
+
 <br>
 
 **后端管理系统：**
@@ -172,14 +168,21 @@ https://senduobang.oss-cn-shanghai.aliyuncs.com/admin-%E8%AE%A2%E5%8D%95%E8%AF%A
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5.PNG?x-oss-process=image/resize,p_30 "首页")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5.PNG?x-oss-process=image/resize,p_30&t1 "首页")
 <br> 
 <br> 
 - 商品详情
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85.PNG?x-oss-process=image/resize,p_30 "商品详情")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85.PNG?x-oss-process=image/resize,p_30&t=1 "商品详情")
+<br> 
+<br> 
+- 商品详情2
+<br> 
+
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%852.PNG?x-oss-process=image/resize,p_30&t=1 "商品详情")
 <br> 
 <br> 
 - 客服
@@ -221,7 +224,7 @@ https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%
 <br> 
 
 ![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%88%91%E7%9A%84%E4%B8%AD%E5%BF%83.PNG?x-oss-process=image/resize,p_30 "我的中心")
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%88%91%E7%9A%84%E4%B8%AD%E5%BF%83.PNG?x-oss-process=image/resize,p_30&t=1 "我的中心")
 <br> 
 <br> 
 - 订单列表
@@ -243,6 +246,20 @@ https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%
 
 ![输入图片说明](
 https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%89%A9%E6%B5%81%E8%AF%A6%E6%83%85.PNG?x-oss-process=image/resize,p_30 "物流详情")
+<br> 
+<br> 
+- 拼团1
+<br> 
+
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%8B%BC%E5%9B%A2.PNG?x-oss-process=image/resize,p_30 "物流详情")
+<br> 
+<br> 
+- 拼团2
+<br> 
+
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%8B%BC%E5%9B%A22.PNG?x-oss-process=image/resize,p_30 "物流详情")
 
 **捐赠：**
 开源项目需要得到大家的支持才能更好的发展生态圈，如果您感觉项目对您有帮助不妨捐赠支持一下项目，感谢！
