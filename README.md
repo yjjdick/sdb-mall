@@ -6,6 +6,7 @@
 - 重点说明：此项目并不是提供下载运行后直接就能上生产的情况，在我多年的经验里告诉我，所有的项目即使是商业模式非常相似但是在业务需求细节上也是有各种各种不同的变化，特别是在C端和campaign这块，举几个例子，在C端方面，你可能和别人使用完全色调，页面布局一模一样的页面吗？在后端同样一个优惠券的功能你能保证你不做一些定制化的实现吗？所以sdb mall这个架构是用来让你可以快速开发成自己独有的，个性化的商城项目，并非是提供大而全的功能，当然我也会在其中添加一些比较通用的功能，比如商城的完整流程和之后会开发一些营销模块等
 - 后端开源
 <br>
+
 [![](https://img.shields.io/badge/%E4%BD%9C%E8%80%85-姚嘉钧-orange.svg)](https://github.com/yjjdick/sdb-mall) 
 [![](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yjjdick/sdb-mall) 
 [![](https://img.shields.io/badge/QQ-406123228-brightgreen.svg)]()
@@ -119,6 +120,7 @@ sdb
 
  **介绍和使用视频**
 - 视频地址：请关注公众号，在公众号内查看
+<br>
 ![输入图片说明](
 https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%85%AC%E4%BC%97%E5%8F%B7.jpg?x-oss-process=image/resize,p_30 "工作室公众号")
 
