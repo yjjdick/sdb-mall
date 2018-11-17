@@ -120,8 +120,7 @@ sdb
 
  **介绍和使用视频**
 - 视频地址：请关注公众号，在公众号内查看
-<br>
-![输入图片说明](
+- ![输入图片说明](
 https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%85%AC%E4%BC%97%E5%8F%B7.jpg?x-oss-process=image/resize,p_30 "工作室公众号")
 
 <br>
