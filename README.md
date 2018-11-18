@@ -119,8 +119,15 @@ sdb
 <br>
 
  **介绍和使用视频**
-- 视频地址：请关注公众号，在公众号内查看
-- ![输入图片说明](
+- 视频地址：
+- idea下代码启动：https://v.qq.com/x/page/y0795k72ak8.html
+- backend安装启动：https://v.qq.com/x/page/o0795qs3drx.html
+- 小程序wepy框架介绍：https://v.qq.com/x/page/t0795vugxc2.html
+- eclipse下代码启动：https://v.qq.com/x/page/a0795t266c8.html
+- 小程序业务介绍：https://v.qq.com/x/page/f07958veoua.html
+- 管理端业务流程介绍：https://v.qq.com/x/page/a079561268d.html
+- 二次开发简单介绍：http://v.qq.com/x/page/i0795wutn2o.html
+- 公众号森多邦工作室提供互联网软件开发，美术设计等服务![输入图片说明](
 https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%85%AC%E4%BC%97%E5%8F%B7.jpg?x-oss-process=image/resize,p_30 "工作室公众号")
 
 <br>
