@@ -141,6 +141,14 @@ https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9
 
 **后端管理系统：**
 <br> 
+- 首页直播
+<br> 
+
+![输入图片说明](
+https://senduobang.oss-cn-shanghai.aliyuncs.com/ezgif-1-1cb294e07bec.gif "物流详情")
+<br> 
+<br> 
+
 - 首页dash
 <br> 
 
@@ -275,13 +283,6 @@ https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%
 
 ![输入图片说明](
 https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%8B%BC%E5%9B%A22.PNG?x-oss-process=image/resize,p_30 "物流详情")
-<br> 
-<br> 
-- 首页直播
-<br> 
-
-![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/ezgif-1-1cb294e07bec.gif "物流详情")
 
 **捐赠：**
 开源项目需要得到大家的支持才能更好的发展生态圈，如果您感觉项目对您有帮助不妨捐赠支持一下项目，感谢！
