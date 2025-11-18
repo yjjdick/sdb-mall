@@ -7,13 +7,6 @@
 - 后端开源
 <br>
 
-[![](https://img.shields.io/badge/%E4%BD%9C%E8%80%85-姚嘉钧-orange.svg)](https://github.com/yjjdick/sdb-mall) 
-[![](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yjjdick/sdb-mall) 
-[![](https://img.shields.io/badge/QQ-406123228-brightgreen.svg)]()
-
-<br> 
-<br>
-
 **具有如下特点** 
 - 友好的代码结构及注释，便于阅读及二次开发
 - 实现前后端分离，通过token进行数据交互，前端再也不用关注后端技术
@@ -238,13 +231,7 @@ https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%
 https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85.PNG?x-oss-process=image/resize,p_30 "订单详情")
 <br> 
 <br> 
-- 我的中心
-<br> 
 
-![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%88%91%E7%9A%84%E4%B8%AD%E5%BF%83.PNG?x-oss-process=image/resize,p_30&t=1 "我的中心")
-<br> 
-<br> 
 - 订单列表
 <br> 
 
