@@ -11,11 +11,6 @@
 [![](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yjjdick/sdb-mall) 
 [![](https://img.shields.io/badge/QQ-406123228-brightgreen.svg)]()
 
-****
-### Author yjjdick QQ：406123228 QQ群：346743162
-### E-mail:406123228@qq.com
-****
-
 <br> 
 <br>
 
@@ -280,14 +275,3 @@ https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%
 <br> 
 - 拼团2
 <br> 
-
-![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%8B%BC%E5%9B%A22.PNG?x-oss-process=image/resize,p_30 "物流详情")
-
-**捐赠：**
-开源项目需要得到大家的支持才能更好的发展生态圈，如果您感觉项目对您有帮助不妨捐赠支持一下项目，感谢！
-
-![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg?x-oss-process=image/resize,p_30 "支付宝")
-![输入图片说明](
-https://senduobang.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg?x-oss-process=image/resize,p_30 "微信")
