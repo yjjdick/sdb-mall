@@ -60,7 +60,6 @@ sdb
 - 开发文档：正在设计中
 - Github仓库：https://github.com/yjjdick/sdb-mall  
 - Gitee仓库：https://gitee.com/yjjdick/sdb-mall
-- 官方QQ交流群：346743162<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=001dc5c4b5bf9abe5b187aa0d058ac9a19f0c98295647f9fa7c1a6b496b1b59f"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="森多邦商城交流群" title="森多邦商城交流群"></a>
 - 技术讨论、二次开发等咨询、问题和建议，请移步到交流群！
 - 如需关注项目最新动态，请Watch、Star项目，同时也是对项目最好的支持
 <br>
